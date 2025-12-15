@@ -1,0 +1,250 @@
+/* -------------------------------------- */
+/* 💻 Desktop Styles (Default) */
+
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 16px; /* Desktop Base Font */
+}
+
+/* Header & Navigation Layout */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px; /* Desktop Padding */
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #ddd;
+}
+
+.search-bar {
+    display: flex; /* Visible inline on desktop */
+}
+
+.desktop-nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Hide the hamburger icon by default on desktop */
+.hamburger-menu {
+    display: none; 
+}
+
+/* Layout Stacking (Desktop: Side-by-Side Grid) */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns on desktop */
+    gap: 20px;
+    padding: 20px 40px;
+}
+
+.product-card {
+    background-color: #eee;
+    padding: 30px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+/* Hero Banner & General Typography */
+.hero-banner {
+    background-color: #4CAF50; /* Green theme for agriculture */
+    color: white;
+    padding: 60px 40px;
+    text-align: center;
+}
+
+.hero-banner h1 {
+    font-size: 2.5em; 
+}
+
+
+/* -------------------------------------- */
+/* 📱 Mobile Transformation (max-width: 768px) */
+/* -------------------------------------- */
+
+@media (max-width: 768px) {
+    
+    /* 1. Header Transformation (Mobile) */
+    .main-header {
+        padding: 10px 20px; /* Reduced padding on mobile */
+    }
+
+    /* Hide the inline search bar */
+    .search-bar {
+        display: none; 
+    }
+
+    /* Replace navigation links with a Hamburger Icon */
+    .desktop-nav {
+        display: none; /* Hide desktop links */
+    }
+
+    /* Show the hamburger menu icon */
+    .hamburger-menu {
+        display: block; 
+        font-size: 1.5em;
+        cursor: pointer;
+    }
+
+    /* Re-align the header for mobile (logo on left, hamburger on right) */
+    .main-header {
+        justify-content: space-between;
+    }
+    
+    /* 2. Layout Stacking (Mobile) */
+    .product-grid {
+        grid-template-columns: 1fr; /* Stack vertically (1 column) */
+        padding: 10px 20px;
+        gap: 15px; /* Slightly reduced gap */
+    }
+    
+    /* 3. Font Size Adjustment */
+    body {
+        font-size: 14px; /* Reduced base font size */
+    }
+    
+    .hero-banner {
+        padding: 30px 20px; /* Reduced padding */
+    }
+    
+    .hero-banner h1 {
+        font-size: 1.8em; /* Reduced heading size */
+    }
+
+    .product-card {
+        padding: 20px; /* Reduced padding */
+    }
+}
+/* --- New Product Page Styles (Appended to styles.css) --- */
+
+/* Product Page Layout (Desktop Default: Side-by-Side) */
+.product-page-main {
+    padding: 20px 40px; /* Desktop Padding */
+}
+
+.product-container {
+    display: flex; /* Enables side-by-side layout */
+    gap: 40px;
+}
+
+/* Image Gallery Styling */
+.product-gallery {
+    width: 40%; /* Image column takes 40% of space on desktop */
+}
+
+.primary-image-holder {
+    width: 100%;
+    height: 350px;
+    background-color: #e0f2f1;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-style: italic;
+    color: #004d40;
+}
+
+.thumbnail-row {
+    display: flex;
+    gap: 10px;
+}
+
+.thumbnail-holder {
+    width: 80px;
+    height: 80px;
+    background-color: #f0f4f4;
+    border: 2px solid transparent;
+    border-radius: 4px;
+}
+
+.thumbnail-holder.active {
+    border-color: #4CAF50; /* Highlight active thumbnail */
+}
+
+/* Product Details Styling */
+.product-details {
+    width: 60%; /* Details column takes 60% of space on desktop */
+}
+
+.product-name-prominent {
+    font-size: 2.2em;
+    margin-top: 0;
+}
+
+.product-price-prominent {
+    font-size: 1.8em;
+    color: #FF9800; /* Prominent orange for price */
+    font-weight: bold;
+    margin: 20px 0;
+    padding: 10px;
+    background-color: #fff3e0; /* Light background to highlight price */
+    border-radius: 4px;
+}
+
+/* CTA Section */
+.cta-section {
+    padding: 20px 0;
+    border-top: 1px solid #eee;
+}
+
+.add-to-cart-btn-large {
+    background-color: #4CAF50; /* Bold Green CTA */
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 6px;
+    margin-left: 20px;
+}
+
+/* Description and Reviews */
+.product-description, .reviews-section {
+    padding: 20px 0;
+}
+
+.reviews-section h2 {
+    margin-bottom: 15px;
+}
+
+/* --- Responsive Transformation (Mobile: Stacking) --- */
+
+@media (max-width: 768px) {
+    .product-page-main {
+        padding: 10px 20px; /* Reduced padding on mobile */
+    }
+
+    /* Layout Stacking: Image Gallery and Details */
+    .product-container {
+        flex-direction: column; /* Stack vertically */
+        gap: 20px;
+    }
+    
+    /* Both sections take full width on mobile */
+    .product-gallery, .product-details {
+        width: 100%; 
+    }
+    
+    .primary-image-holder {
+        height: 250px; /* Slightly smaller image on mobile */
+    }
+    
+    .product-name-prominent {
+        font-size: 1.8em; /* Reduced font size */
+    }
+    
+    /* Align CTA elements vertically if necessary */
+    .cta-section input, .add-to-cart-btn-large {
+        display: block;
+        width: 100%;
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
